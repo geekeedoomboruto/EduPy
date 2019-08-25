@@ -1,0 +1,2 @@
+# EduPy
+Python, simpler
