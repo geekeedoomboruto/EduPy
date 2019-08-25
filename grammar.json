@@ -1,0 +1,15 @@
+{
+    "put(": "print(",
+    "ask(": "input(",
+    "props": "__init__",
+    "//": "#",
+    "/*": "\"\"\"",
+    "*/":  "\"\"\"",
+    "command ": "def",
+    "define ": "def",
+    "sen ": "return",
+    "create": "class",
+    "otherwise": "else",
+    "again if": "elif",
+    "until": "while not"
+}
