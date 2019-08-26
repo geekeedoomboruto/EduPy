@@ -59,7 +59,7 @@ def edupy_comp(code):
                         line = line
                     else:
                         line = line.replace(i, ttr)
-                if (isfunction(line) and not ":" in line) or (isclass(line) and not ":" in line) or (iscondition(line) and not ":" in line) or (isloop(line) and not ":" in line):
+                if (isfunction(line) and not ":" in line and not "{" in line) or (isclass(line) and not ":" in line and not "{") or (iscondition(line) and not ":" in line and not "{" in line) or (isloop(line) and not ":" in line and not "{" in line):
                     line += ":"
                 else:
                     line += ""
