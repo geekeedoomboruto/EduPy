@@ -71,5 +71,5 @@ def pyfile(code, ofn):
     ofn = ofn.split(".")
     filename = ofn[0]+'.py'
     f = open(filename, "w")
-    f.write(code)
+    f.write(edupy_comp(code))
     f.close()
