@@ -14,4 +14,4 @@ create Human {
 
 object me = Human("Noname Something", 100, "M", True, 100, 100)
 
-put(f"My name is {me.name}") // This line displays my name
+put(f"My name is {me.name}") # This line displays my name
