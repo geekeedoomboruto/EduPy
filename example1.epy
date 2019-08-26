@@ -1,0 +1,17 @@
+/* --------------------- |
+|     Example Program    |
+|  --------------------- */
+create Human {
+	define props(name, age, sex, isalive, height, weight) {
+		self.name = name
+		self.age = age
+		self.sex = sex
+		self.isalive = isalive
+		self.height = height
+		self.weight = weight
+	}
+}
+
+object me = Human("Noname Something", 100, "M", True, 100, 100)
+
+put(f"My name is {me.name}") // This line displays my name
