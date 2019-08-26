@@ -43,6 +43,54 @@ def iscondition(string):
             return True
         else:
             return False
+def issomething(line):
+    if isfunction(line) or isclass(line) or iscondition(line) or isloop(line):
+        return True
+    else:
+        return False
+def isvar(line):
+    if not "=" in line:
+        return False
+    else:
+        if len(line.split("=")) == 2:
+            return True
+        else:
+            return False
+def hasvariable(line):
+    if isvar(line):
+        return True
+    else:
+        if issomething(line):
+            if ":" in line:
+                nl = line.split(":")
+            if "{" in line:
+                nl = line.split("{")
+            else:
+                nl = line
+            logic = []
+            for s in nl:
+                if isvar(s):
+                    logic.append(True)
+                else:
+                    logic.append(False)
+            if True in logic:
+                return True
+            else:
+                return False   
+        else:
+            return False
+def remnames(line):
+    if "number" in line:
+        line.replace("number ", "")
+    if "object" in line:
+        line.replace("object ", "")
+    if "var" in line:
+        line.replace("var ", "")
+    if "string" in line:
+        line.replace("string ", "")
+    if "unchange" in line:
+        line.replace("unchange ", "")
+    return line
 def edupy_comp(code):
     grammar = readJson("grammar.json")
     mmpcode = grammar.keys
@@ -54,13 +102,15 @@ def edupy_comp(code):
             for i in mmpcode:
                 if i in line:
                     ttr = pycode[mmpcode.index(i)]
-                    tryline = line.replace(i, "~"+ttr)
+                    tryline = line.replace(r'{}'.format(i), "~"+ttr)
                     if stringbefore(tryline, tryline.index("~")):
                         line = line
                     else:
                         line = line.replace(i, ttr)
-                if (isfunction(line) and not ":" in line and not "{" in line) or (isclass(line) and not ":" in line and not "{") or (iscondition(line) and not ":" in line and not "{" in line) or (isloop(line) and not ":" in line and not "{" in line):
+                if issomething(line) and not ":" in line and not "{" in line:
                     line += ":"
+                if hasvariable(line):
+                    line = remnames(line)
                 else:
                     line += ""
             line+="\n"
