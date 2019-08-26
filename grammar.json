@@ -11,5 +11,7 @@
     "create": "class",
     "otherwise": "else",
     "again if": "elif",
-    "until": "while not"
+    "until": "while not",
+    "++": "+=1",
+    "--": "-=1"
 }

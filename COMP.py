@@ -63,6 +63,7 @@ def edupy_comp(code):
                     line += ":"
                 else:
                     line += ""
+            line+="\n"
             new_code += line
 
     return new_code
