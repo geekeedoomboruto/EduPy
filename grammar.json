@@ -20,5 +20,6 @@
     "var ": "",
     "const ": "",
     "number ": "",
-    "string ": ""
+    "string ": "",
+    "use": "import"
 }
