@@ -2,7 +2,7 @@
 |     Example Program    |
 |  --------------------- */
 create Human {
-	define props(name, age, sex, isalive, height, weight) {
+	define props(self, name, age, sex, isalive, height, weight) {
 		self.name = name
 		self.age = age
 		self.sex = sex
