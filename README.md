@@ -5,7 +5,7 @@ Python, simpler
 - (You can use it with Python 2.7 but you will have to change the <code>shell_v2.py</code>)
 # Example of simple code
 <pre>
-// In EduPy
+# In EduPy
 i = 0
 until i > 3
   put(i)
