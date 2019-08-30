@@ -32,4 +32,4 @@ The command is <code>edupy shell open</code>
 ## It's easier than a lot of other languages
  - More easier than Python, and it's a real programming language, it is one of the best and easiest languages in the world, best because of python and easiest because of it's syntax
 ## It's useful
- - Most of the time, when someone tries to create a language, it comes with only some builtins stuff and no support of the community, because EduPy is writen in Python, you get access to the Anaconda libraries and PyPi libraries!
+ - You can use it with PyPi libs and Anaconda libs
