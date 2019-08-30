@@ -1,4 +1,29 @@
-from jsonUtils import readJson
+import sys
+import json
+class ReturnValue(object):
+    """
+    Used for readJson
+    """
+    def __init__(self, keys, values, length):
+       self.keys = keys
+       self.values = values
+       self.length = length
+def readJson(filename):
+    """
+    Returns a list of all the objects in the .json set
+    """
+    with open(filename, 'r') as f:
+        data = json.load(f)
+    info = str(data)
+    info.split(":")
+    keys = []
+    for i in data:
+        keys.append(i)
+    obj = []
+    for i in keys:
+        obj.append(data[i])
+    length = len(keys)
+    return ReturnValue(keys, obj, length)
 def stringbefore(string, indexof):
     if not '"' in string:
         return False
@@ -123,3 +148,46 @@ def pyfile(code, ofn):
     f = open(filename, "w")
     f.write(edupy_comp(code))
     f.close()
+def execute(original):
+    try:
+        original_code = open(original, 'r').readlines()
+        original_code = "".join(original_code)
+        pycode = edupy_comp(original_code)
+        exec(pycode)
+    except Exception as e:
+        print(e)
+def shell(something=None):
+    codes = []
+    codes.append("")
+    count = 0
+    print("EduPy shell in Windows 10")
+    print("EduPy Village v0.3a")
+    while True:
+        w = (input(">>> "))
+        if not w == "script":
+            x = edupy_comp(w+"\n")
+        else:
+            x = "script"
+        if x == "exit":
+            break
+        if not x == "script":
+            try:
+                y = eval(x)
+                if y: print(y)
+            except:
+                try:
+                    exec(x)
+                except Exception as e:
+                    print("Erreur:", e)
+        else:
+            while True:
+                line = input(">>> ")
+                if not line == "finish":
+                    codes[count] += line+"\n"
+                else:
+                    exec(edupy_comp(codes[count]))
+                    count += 1
+                    codes.append("")
+                    break
+if __name__ == '__main__':
+    globals()[sys.argv[1]](sys.argv[2])
