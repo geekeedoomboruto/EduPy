@@ -20,8 +20,8 @@ while not i > 3:
 </pre>
 EduPy is much easier
 # How to excute a file writen in EduPy
-The command is <code>edupy execute 'filename'</code>
-Let's suppose that you have a file named <code>randomfile.epy</code>, you will do <code>edupy execute 'randomfile.epy'</code> to execute it! Don't worry, i'm gonna try to make the command shorter
+The command is <code>exepy 'filename'</code>
+Let's suppose that you have a file named <code>randomfile.epy</code>, you will do <code>exepy randomfile.epy</code> to execute it! Don't worry, i'm gonna try to make the command shorter
 # How to access the shell
 The command is <code>edupy shell open</code>
 # Avantages
